@@ -1,6 +1,7 @@
 package com.zw.net;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
 /**
@@ -22,5 +23,9 @@ public class Net_01_IPAddress {
         InetAddress ip = InetAddress.getByName("127.0.0.1");
         System.out.println(ip.getHostName());//主机名
         System.out.println(ip.getHostAddress());//主机IP地址
+
+        InetSocketAddress socketAddress = new InetSocketAddress("localhost",80);
+        System.out.println(socketAddress.getAddress());
+        System.out.println(socketAddress.getPort());
     }
 }
