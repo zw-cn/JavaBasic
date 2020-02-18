@@ -222,6 +222,9 @@ interface Servlet03{
     void service(Requset03 request, Response03 response);
 }
 class LoginServlet03 implements Servlet03{
+    public LoginServlet03() {
+    }
+
     @Override
     public void service(Requset03 request, Response03 response) {
         response.print("<!DOCTYPE html>");
@@ -237,6 +240,9 @@ class LoginServlet03 implements Servlet03{
     }
 }
 class RegisterServlet03 implements Servlet03{
+    public RegisterServlet03() {
+    }
+
     @Override
     public void service(Requset03 request, Response03 response) {
         response.print("<!DOCTYPE html>");
