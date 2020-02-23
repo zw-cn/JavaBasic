@@ -102,4 +102,8 @@ class User{
     private void setAge() {
         this.age = 0;
     }
+
+    public void sayHello(int a){
+        System.out.println("Hello!");
+    }
 }
