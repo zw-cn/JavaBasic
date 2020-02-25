@@ -12,10 +12,10 @@ import java.lang.reflect.Field;
  * @author: zw-cn
  * @create: 2020-02-18 22:52
  */
-public class Annotatioin_01_Basic_02 {
+public class Annotation_01_Basic_02 {
     public static void main(String[] args) {
         try {
-            Class clazz = Class.forName("com.zw.annotation.Sutdent");
+            Class clazz = Class.forName("com.zw.annotation.Student");
             Annotation[] annotations = clazz.getAnnotations();
             for (Annotation annotation : annotations) {
                 System.out.println(annotation);
@@ -34,7 +34,7 @@ public class Annotatioin_01_Basic_02 {
     }
 }
 @ORMTable(value = "tb_STU")
-class Sutdent{
+class Student{
     @ORMColumn(name = "age", type = "int", len = 3)
     private int age = 0;
     @ORMColumn(name = "name", type = "varchar", len = 100)
