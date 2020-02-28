@@ -63,10 +63,10 @@ public class Patten_01_Single_07_Test {
             e.printStackTrace();
         }
     }
-    public static void test(String name,Runnable thread,int threadNum,CountDownLatch count) throws InterruptedException {
+    public static void test(String name,Runnable run,int threadNum,CountDownLatch count) throws InterruptedException {
         long start = System.currentTimeMillis();
         for (int i = 0; i < threadNum; i++) {
-            new Thread(thread).start();
+            new Thread(run).start();
         }
         count.await();
         long end = System.currentTimeMillis();
