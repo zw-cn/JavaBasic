@@ -1,4 +1,4 @@
-package com.zw.patten;
+package com.zw.patten.create.singleton;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
@@ -55,7 +55,7 @@ class Patten_01_Single_06_CrackTest {
         //通过反射破解
         {
             try {
-                Class clazz = Class.forName("com.zw.patten.Patten_01_Single_06_Crack");
+                Class clazz = Class.forName("com.zw.patten.create.singleton.Patten_01_Single_06_Crack");
                 Constructor c = clazz.getDeclaredConstructor();
                 c.setAccessible(true);
                 System.out.println("通过反射破解了单例：" + c.newInstance());//Patten_01_Single_06_Crack的构造器防止反射破解单例模式

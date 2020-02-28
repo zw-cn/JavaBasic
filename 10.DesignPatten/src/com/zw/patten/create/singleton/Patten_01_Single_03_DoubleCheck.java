@@ -1,4 +1,4 @@
-package com.zw.patten;
+package com.zw.patten.create.singleton;
 
 /**
  * @program: JavaBasic
@@ -14,7 +14,7 @@ public class Patten_01_Single_03_DoubleCheck {
     /**
      * @description: 双重检查加锁不适用于1.4之前
      * @param
-     * @return: com.zw.patten.Patten_01_Single_03_DoubleCheck
+     * @return: com.zw.patten.create.singleton.Patten_01_Single_03_DoubleCheck
      * @author: zw-cn
      * @time: 2/27/2020 4:57 PM
      */
