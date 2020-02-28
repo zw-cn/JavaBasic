@@ -10,7 +10,7 @@ package com.zw.patten;
 public class Patten_01_Single_04_StaticInnerClass {
     private Patten_01_Single_04_StaticInnerClass(){
     }
-    static class Patten_01_Single_04_StaticInnerClass_Inner{
+    private static class Patten_01_Single_04_StaticInnerClass_Inner{
         private static Patten_01_Single_04_StaticInnerClass instance = new Patten_01_Single_04_StaticInnerClass();
     }
     public static Patten_01_Single_04_StaticInnerClass getInstance(){
