@@ -3,44 +3,124 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="296.0" y="103.0">com.zw.patten.create.factory.factory.TeslaFactory</node>
-    <node x="0.0" y="103.0">com.zw.patten.create.factory.factory.AudiFactory</node>
-    <node x="148.0" y="0.0">com.zw.patten.create.factory.factory.CarFactory</node>
-    <node x="148.0" y="103.0">com.zw.patten.create.factory.factory.BydFactory</node>
-    <node x="138.29999999999998" y="206.0">com.zw.patten.create.factory.factory.Factory</node>
+    <node x="305.71428571428567" y="0.0">com.zw.patten.create.t2.factory.Car</node>
+    <node x="270.0" y="123.0">com.zw.patten.create.t2.factory.Tesla</node>
+    <node x="40.57291666666663" y="226.0">com.zw.patten.create.t2.factory.factory.AudiFactory</node>
+    <node x="121.99999999999997" y="123.0">com.zw.patten.create.t2.factory.factory.CarFactory</node>
+    <node x="243.79761904761904" y="226.0">com.zw.patten.create.t2.factory.factory.TeslaFactory</node>
+    <node x="414.82291666666663" y="123.0">com.zw.patten.create.t2.factory.Byd</node>
+    <node x="0.0" y="123.0">com.zw.patten.create.t2.factory.Audi</node>
+    <node x="406.21428571428567" y="226.0">com.zw.patten.create.t2.factory.factory.BydFactory</node>
+    <node x="245.99999999999997" y="329.0">com.zw.patten.create.t2.factory.factory.Factory</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.zw.patten.create.factory.factory.BydFactory" target="com.zw.patten.create.factory.factory.CarFactory">
-      <point x="0.0" y="-26.5" />
+    <edge source="com.zw.patten.create.t2.factory.factory.AudiFactory" target="com.zw.patten.create.t2.factory.Audi">
+      <point x="-42.66666666666657" y="-26.5" />
+      <point x="61.90625000000006" y="206.0" />
+      <point x="50.5" y="206.0" />
       <point x="0.0" y="26.5" />
     </edge>
-    <edge source="com.zw.patten.create.factory.factory.Factory" target="com.zw.patten.create.factory.factory.TeslaFactory">
-      <point x="37.25" y="-26.5" />
-      <point x="250.04999999999998" y="181.0" />
-      <point x="362.0" y="181.0" />
+    <edge source="com.zw.patten.create.t2.factory.factory.Factory" target="com.zw.patten.create.t2.factory.factory.TeslaFactory">
+      <point x="0.0" y="-26.5" />
+      <point x="320.5" y="304.0" />
+      <point x="309.79761904761904" y="304.0" />
       <point x="0.0" y="26.5" />
     </edge>
-    <edge source="com.zw.patten.create.factory.factory.Factory" target="com.zw.patten.create.factory.factory.AudiFactory">
-      <point x="-37.25" y="-26.5" />
-      <point x="175.54999999999998" y="181.0" />
-      <point x="64.0" y="181.0" />
+    <edge source="com.zw.patten.create.t2.factory.factory.BydFactory" target="com.zw.patten.create.t2.factory.Car">
+      <point x="42.666666666666686" y="-26.5" />
+      <point x="512.8809523809524" y="206.0" />
+      <point x="527.5729166666666" y="206.0" />
+      <point x="527.5729166666666" y="83.0" />
+      <point x="387.77678571428567" y="83.0" />
+      <point x="31.5625" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.Audi" target="com.zw.patten.create.t2.factory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="50.5" y="73.0" />
+      <point x="312.02678571428567" y="73.0" />
+      <point x="-44.1875" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.BydFactory" target="com.zw.patten.create.t2.factory.Byd">
+      <point x="0.0" y="-26.5" />
+      <point x="470.21428571428567" y="206.0" />
+      <point x="465.32291666666663" y="206.0" />
       <point x="0.0" y="26.5" />
     </edge>
-    <edge source="com.zw.patten.create.factory.factory.TeslaFactory" target="com.zw.patten.create.factory.factory.CarFactory">
-      <point x="0.0" y="-26.5" />
-      <point x="362.0" y="78.0" />
-      <point x="254.66666666666663" y="78.0" />
-      <point x="42.66666666666663" y="26.5" />
+    <edge source="com.zw.patten.create.t2.factory.factory.AudiFactory" target="com.zw.patten.create.t2.factory.Car">
+      <point x="5.6843418860808015E-14" y="-26.5" />
+      <point x="104.57291666666669" y="206.0" />
+      <point x="111.49999999999997" y="206.0" />
+      <point x="111.49999999999997" y="83.0" />
+      <point x="324.65178571428567" y="83.0" />
+      <point x="-31.5625" y="26.5" />
     </edge>
-    <edge source="com.zw.patten.create.factory.factory.AudiFactory" target="com.zw.patten.create.factory.factory.CarFactory">
+    <edge source="com.zw.patten.create.t2.factory.factory.Factory" target="com.zw.patten.create.t2.factory.factory.AudiFactory">
+      <point x="-49.66666666666663" y="-26.5" />
+      <point x="270.83333333333337" y="304.0" />
+      <point x="104.57291666666663" y="304.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.BydFactory" target="com.zw.patten.create.t2.factory.factory.CarFactory">
+      <point x="-42.66666666666663" y="-26.5" />
+      <point x="427.54761904761904" y="196.0" />
+      <point x="228.66666666666663" y="196.0" />
+      <point x="42.66666666666666" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.TeslaFactory" target="com.zw.patten.create.t2.factory.Car">
+      <point x="44.0" y="-26.5" />
+      <point x="353.79761904761904" y="206.0" />
+      <point x="395.5" y="206.0" />
+      <point x="395.5" y="103.0" />
+      <point x="362.52678571428567" y="103.0" />
+      <point x="6.3125" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.Byd" target="com.zw.patten.create.t2.factory.Car">
       <point x="0.0" y="-26.5" />
-      <point x="64.0" y="78.0" />
-      <point x="169.33333333333334" y="78.0" />
+      <point x="465.32291666666663" y="93.0" />
+      <point x="375.15178571428567" y="93.0" />
+      <point x="18.9375" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.TeslaFactory" target="com.zw.patten.create.t2.factory.Tesla">
+      <point x="0.0" y="-26.5" />
+      <point x="309.79761904761904" y="206.0" />
+      <point x="320.5" y="206.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.Tesla" target="com.zw.patten.create.t2.factory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="320.5" y="103.0" />
+      <point x="349.90178571428567" y="103.0" />
+      <point x="-6.3125" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.Factory" target="com.zw.patten.create.t2.factory.Car">
+      <point x="49.66666666666663" y="-26.5" />
+      <point x="370.16666666666663" y="304.0" />
+      <point x="544.7142857142857" y="304.0" />
+      <point x="544.7142857142857" y="73.0" />
+      <point x="400.40178571428567" y="73.0" />
+      <point x="44.1875" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.AudiFactory" target="com.zw.patten.create.t2.factory.factory.CarFactory">
+      <point x="42.666666666666686" y="-26.5" />
+      <point x="147.23958333333331" y="206.0" />
+      <point x="143.33333333333331" y="206.0" />
       <point x="-42.66666666666666" y="26.5" />
     </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.CarFactory" target="com.zw.patten.create.t2.factory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="185.99999999999997" y="93.0" />
+      <point x="337.27678571428567" y="93.0" />
+      <point x="-18.9375" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.t2.factory.factory.TeslaFactory" target="com.zw.patten.create.t2.factory.factory.CarFactory">
+      <point x="-44.0" y="-26.5" />
+      <point x="265.79761904761904" y="206.0" />
+      <point x="185.99999999999997" y="206.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="250.0" y="39.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="525.5" y="210.0" />
   <SelectedNodes />
   <Categories>
     <Category>Methods</Category>

@@ -3,40 +3,39 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="121.0" y="103.0">com.zw.patten.create.factory.Byd</node>
-    <node x="0.0" y="103.0">com.zw.patten.create.factory.Audi</node>
-    <node x="73.0" y="206.0">com.zw.patten.create.factory.nofactory.NoFactory</node>
-    <node x="121.0" y="0.0">com.zw.patten.create.factory.Car</node>
+    <node x="363.5" y="136.0">com.zw.patten.create.t2.factory.Car</node>
+    <node x="387.5" y="-70.0">com.zw.patten.create.t2.factory.nofactory.NoFactory</node>
+    <node x="357.0" y="33.0">com.zw.patten.create.t2.factory.Audi</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.zw.patten.create.factory.Audi" target="com.zw.patten.create.factory.Car">
-      <point x="0.0" y="-26.5" />
-      <point x="50.5" y="78.0" />
-      <point x="137.83333333333334" y="78.0" />
-      <point x="-33.66666666666666" y="26.5" />
-    </edge>
-    <edge source="com.zw.patten.create.factory.Byd" target="com.zw.patten.create.factory.Car">
-      <point x="0.0" y="-26.5" />
-      <point x="0.0" y="26.5" />
-    </edge>
-    <edge source="com.zw.patten.create.factory.nofactory.NoFactory" target="com.zw.patten.create.factory.Car">
+    <edge source="com.zw.patten.create.t2.factory.nofactory.NoFactory" target="com.zw.patten.create.t2.factory.Car">
       <point x="37.25" y="-26.5" />
-      <point x="184.75" y="181.0" />
-      <point x="232.5" y="181.0" />
-      <point x="232.5" y="78.0" />
-      <point x="205.16666666666666" y="78.0" />
-      <point x="33.66666666666666" y="26.5" />
+      <point x="118.25" y="181.0" />
+      <point x="111.5" y="181.0" />
+      <point x="111.5" y="78.0" />
+      <point x="106.25" y="78.0" />
+      <point x="25.25" y="26.5" />
     </edge>
-    <edge source="com.zw.patten.create.factory.nofactory.NoFactory" target="com.zw.patten.create.factory.Audi">
+    <edge source="com.zw.patten.create.t2.factory.nofactory.NoFactory" target="com.zw.patten.create.t2.factory.Audi">
       <point x="-37.25" y="-26.5" />
-      <point x="110.25" y="181.0" />
+      <point x="43.75" y="181.0" />
       <point x="50.5" y="181.0" />
       <point x="0.0" y="26.5" />
     </edge>
+    <edge source="com.zw.patten.create.t2.factory.Audi" target="com.zw.patten.create.t2.factory.Car">
+      <point x="0.0" y="-26.5" />
+      <point x="50.5" y="78.0" />
+      <point x="55.75" y="78.0" />
+      <point x="-25.25" y="26.5" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="250.0" y="39.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="495.5" y="78.0" />
+  <SelectedNodes>
+    <node>com.zw.patten.create.t2.factory.Car</node>
+    <node>com.zw.patten.create.t2.factory.nofactory.NoFactory</node>
+    <node>com.zw.patten.create.t2.factory.Audi</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Methods</Category>
