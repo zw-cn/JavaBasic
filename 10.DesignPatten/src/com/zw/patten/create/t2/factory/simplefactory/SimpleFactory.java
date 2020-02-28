@@ -1,8 +1,8 @@
-package com.zw.patten.create.factory.simplefactory;
+package com.zw.patten.create.t2.factory.simplefactory;
 
-import com.zw.patten.create.factory.Audi;
-import com.zw.patten.create.factory.Byd;
-import com.zw.patten.create.factory.Car;
+import com.zw.patten.create.t2.factory.Audi;
+import com.zw.patten.create.t2.factory.Byd;
+import com.zw.patten.create.t2.factory.Car;
 
 /**
  * @program: JavaBasic

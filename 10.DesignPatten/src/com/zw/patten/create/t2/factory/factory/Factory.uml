@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="296.0" y="103.0">com.zw.patten.create.factory.factory.TeslaFactory</node>
+    <node x="0.0" y="103.0">com.zw.patten.create.factory.factory.AudiFactory</node>
+    <node x="148.0" y="0.0">com.zw.patten.create.factory.factory.CarFactory</node>
+    <node x="148.0" y="103.0">com.zw.patten.create.factory.factory.BydFactory</node>
+    <node x="138.29999999999998" y="206.0">com.zw.patten.create.factory.factory.Factory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.zw.patten.create.factory.factory.BydFactory" target="com.zw.patten.create.factory.factory.CarFactory">
+      <point x="0.0" y="-26.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.factory.factory.Factory" target="com.zw.patten.create.factory.factory.TeslaFactory">
+      <point x="37.25" y="-26.5" />
+      <point x="250.04999999999998" y="181.0" />
+      <point x="362.0" y="181.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.factory.factory.Factory" target="com.zw.patten.create.factory.factory.AudiFactory">
+      <point x="-37.25" y="-26.5" />
+      <point x="175.54999999999998" y="181.0" />
+      <point x="64.0" y="181.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.factory.factory.TeslaFactory" target="com.zw.patten.create.factory.factory.CarFactory">
+      <point x="0.0" y="-26.5" />
+      <point x="362.0" y="78.0" />
+      <point x="254.66666666666663" y="78.0" />
+      <point x="42.66666666666663" y="26.5" />
+    </edge>
+    <edge source="com.zw.patten.create.factory.factory.AudiFactory" target="com.zw.patten.create.factory.factory.CarFactory">
+      <point x="0.0" y="-26.5" />
+      <point x="64.0" y="78.0" />
+      <point x="169.33333333333334" y="78.0" />
+      <point x="-42.66666666666666" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="250.0" y="39.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

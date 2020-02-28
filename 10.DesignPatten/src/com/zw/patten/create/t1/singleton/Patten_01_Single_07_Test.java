@@ -1,4 +1,4 @@
-package com.zw.patten.create.singleton;
+package com.zw.patten.create.t1.singleton;
 
 import java.util.concurrent.CountDownLatch;
 

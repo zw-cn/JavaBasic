@@ -1,7 +1,7 @@
-package com.zw.patten.create.factory.nofactory;
+package com.zw.patten.create.t2.factory.nofactory;
 
-import com.zw.patten.create.factory.Audi;
-import com.zw.patten.create.factory.Car;
+import com.zw.patten.create.t2.factory.Audi;
+import com.zw.patten.create.t2.factory.Car;
 
 /**
  * @program: JavaBasic

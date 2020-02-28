@@ -1,4 +1,4 @@
-package com.zw.patten.create.factory;
+package com.zw.patten.create.t2.factory;
 
 /**
  * @program: JavaBasic
