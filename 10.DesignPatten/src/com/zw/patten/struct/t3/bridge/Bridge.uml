@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="140.077380952381" y="168.0">com.zw.patten.struct.t3.bridge.Bridge_Pad</node>
+    <node x="389.5" y="89.0">com.zw.patten.struct.t3.bridge.Hasee</node>
+    <node x="316.9814814814815" y="168.0">com.zw.patten.struct.t3.bridge.Bridge_Laptop</node>
+    <node x="213.40443121693124" y="0.0">com.zw.patten.struct.t3.bridge.Brand</node>
+    <node x="216.5" y="89.0">com.zw.patten.struct.t3.bridge.Bridge_Computer</node>
+    <node x="120.50000000000001" y="89.0">com.zw.patten.struct.t3.bridge.Dell</node>
+    <node x="10.5" y="89.0">com.zw.patten.struct.t3.bridge.Lenovo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.zw.patten.struct.t3.bridge.Bridge_Computer" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="-38.25" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Bridge_Pad" target="com.zw.patten.struct.t3.bridge.Bridge_Computer">
+      <point x="0.0" y="-14.5" />
+      <point x="199.077380952381" y="138.0" />
+      <point x="235.625" y="138.0" />
+      <point x="-57.375" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Lenovo" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="0.0" y="-14.5" />
+      <point x="55.5" y="59.0" />
+      <point x="231.19014550264552" y="59.0" />
+      <point x="-23.714285714285722" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Bridge_Pad" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="-39.33333333333337" y="-14.5" />
+      <point x="159.74404761904762" y="148.0" />
+      <point x="0.0" y="148.0" />
+      <point x="0.0" y="49.0" />
+      <point x="219.3330026455027" y="49.0" />
+      <point x="-35.571428571428555" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Bridge_Laptop" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="46.333333333333314" y="-14.5" />
+      <point x="432.81481481481484" y="148.0" />
+      <point x="483.0" y="148.0" />
+      <point x="483.0" y="49.0" />
+      <point x="290.4758597883598" y="49.0" />
+      <point x="35.571428571428555" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Bridge_Laptop" target="com.zw.patten.struct.t3.bridge.Bridge_Computer">
+      <point x="-2.8421709430404007E-14" y="-14.5" />
+      <point x="386.4814814814815" y="148.0" />
+      <point x="350.375" y="148.0" />
+      <point x="57.375" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Dell" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="0.0" y="-14.5" />
+      <point x="158.5" y="69.0" />
+      <point x="243.0472883597884" y="69.0" />
+      <point x="-11.857142857142861" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t3.bridge.Hasee" target="com.zw.patten.struct.t3.bridge.Brand">
+      <point x="0.0" y="-14.5" />
+      <point x="431.0" y="59.0" />
+      <point x="278.61871693121697" y="59.0" />
+      <point x="23.714285714285722" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="264.5" y="39.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
