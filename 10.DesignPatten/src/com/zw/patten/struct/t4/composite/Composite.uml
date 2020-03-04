@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="358.0" y="79.0">com.zw.patten.struct.t4.composite.ImageFile</node>
+    <node x="0.0" y="232.0">com.zw.patten.struct.t4.composite.Composite</node>
+    <node x="241.0" y="79.0">com.zw.patten.struct.t4.composite.TxtFile</node>
+    <node x="27.75" y="153.0">com.zw.patten.struct.t4.composite.Component</node>
+    <node x="131.0" y="232.0">com.zw.patten.struct.t4.composite.Leaf</node>
+    <node x="131.0" y="79.0">com.zw.patten.struct.t4.composite.Folder</node>
+    <node x="0.0" y="79.0">com.zw.patten.struct.t4.composite.VideoFile</node>
+    <node x="125.00000000000001" y="0.0">com.zw.patten.struct.t4.composite.AbstractFile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.zw.patten.struct.t4.composite.TxtFile" target="com.zw.patten.struct.t4.composite.AbstractFile">
+      <point x="0.0" y="-14.5" />
+      <point x="289.5" y="59.0" />
+      <point x="224.0" y="59.0" />
+      <point x="33.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t4.composite.VideoFile" target="com.zw.patten.struct.t4.composite.AbstractFile">
+      <point x="0.0" y="-14.5" />
+      <point x="55.5" y="59.0" />
+      <point x="136.0" y="59.0" />
+      <point x="-55.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t4.composite.ImageFile" target="com.zw.patten.struct.t4.composite.AbstractFile">
+      <point x="0.0" y="-14.5" />
+      <point x="413.5" y="49.0" />
+      <point x="246.0" y="49.0" />
+      <point x="55.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t4.composite.Folder" target="com.zw.patten.struct.t4.composite.AbstractFile">
+      <point x="30.0" y="-14.5" />
+      <point x="206.0" y="59.0" />
+      <point x="202.0" y="59.0" />
+      <point x="11.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t4.composite.Composite" target="com.zw.patten.struct.t4.composite.Component">
+      <point x="-27.75" y="-14.5" />
+      <point x="27.75" y="207.0" />
+      <point x="46.25" y="207.0" />
+      <point x="-37.0" y="14.5" />
+    </edge>
+    <edge source="com.zw.patten.struct.t4.composite.Leaf" target="com.zw.patten.struct.t4.composite.Component">
+      <point x="0.0" y="-14.5" />
+      <point x="169.0" y="207.0" />
+      <point x="120.25000000000001" y="207.0" />
+      <point x="37.000000000000014" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="321.0" y="39.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
