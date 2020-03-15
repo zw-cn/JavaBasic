@@ -1,0 +1,1 @@
+1.在src下建立配置文件db.properties
