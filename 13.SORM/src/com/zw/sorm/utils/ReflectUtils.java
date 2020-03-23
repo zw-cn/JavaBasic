@@ -39,6 +39,9 @@ public class ReflectUtils {
      * @time: 3/15/2020 12:28 PM
      */
     public static void invokeSet(Object obj,String fieldName,Object value){
+        if (value == null){
+            return;
+        }
         Method m = null;
         try {
             m = obj.getClass().getDeclaredMethod("set"+ StringUtils.firstChar2UpperCase(fieldName),value.getClass());

@@ -1,5 +1,13 @@
 package com.zw.sorm.core;
 
+import com.zw.sorm.bean.ColumnInfo;
+import com.zw.sorm.bean.TableInfo;
+import com.zw.sorm.utils.JDBCUtils;
+import com.zw.sorm.utils.ReflectUtils;
+
+import java.lang.reflect.Field;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,8 +16,8 @@ import java.util.List;
  * @author: zw-cn
  * @create: 2020-03-13 15:54
  */
-@SuppressWarnings("all")
-public interface Query {
+//@SuppressWarnings("all")
+public abstract class Query {
     /**
      * @param sql    sql语句
      * @param params 参数
@@ -18,7 +26,19 @@ public interface Query {
      * @author: zw-cn
      * @time: 3/13/2020 3:57 PM
      */
-    int executeDML(String sql, Object... params);
+    public int executeDML(String sql, Object... params) {
+        int count = 0;
+        try (Connection conn = DBManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            JDBCUtils.handleParams(ps, params);
+            System.out.println("MySqlQuery.executeDML->" + ps);
+            count = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 
     /**
      * @param object 要存储的对象
@@ -27,7 +47,32 @@ public interface Query {
      * @author: zw-cn
      * @time: 3/13/2020 4:00 PM
      */
-    void insert(Object object);
+    public void insert(Object object) {
+        Class c = object.getClass();
+        TableInfo tableInfo = TableContext.getPOClassTableMap().get(c);
+        Field[] fields = c.getDeclaredFields();
+        StringBuilder sql = new StringBuilder("insert into " + tableInfo.getTableName() + " (");
+        int notNullFiled = 0;//不为空的属性值
+        List<Object> params = new ArrayList<>();
+        for (Field field : fields) {
+            String fieldName = field.getName();
+            Object fieldValue = ReflectUtils.invokeGet(fieldName, object);
+
+            if (fieldValue != null) {
+                sql.append(fieldName + ",");
+                notNullFiled++;
+                params.add(fieldValue);
+            }
+        }
+        sql.setCharAt(sql.length() - 1, ')');
+
+        sql.append(" values (");
+        for (int i = 0; i < notNullFiled; i++) {
+            sql.append("?,");
+        }
+        sql.setCharAt(sql.length() - 1, ')');
+        executeDML(sql.toString(), params.toArray());
+    }
 
     /**
      * @param clazz 跟表对应类的Class对象
@@ -36,7 +81,15 @@ public interface Query {
      * @author: zw-cn
      * @time: 3/13/2020 4:03 PM
      */
-    void delete(Class clazz, Object id);
+    public void delete(Class clazz, Object id) {
+        //Emp.class,2-->delete from emp where id = 2
+        //通过Class对象获取TableInfo
+        TableInfo tableInfo = TableContext.getPOClassTableMap().get(clazz);
+        ColumnInfo primaryKey = tableInfo.getPrimaryKey();
+
+        String sql = "delete from " + tableInfo.getTableName() + " where " + primaryKey.getColumnName() + "= ?";
+        executeDML(sql, id);
+    }
 
     /**
      * @param object
@@ -45,17 +98,43 @@ public interface Query {
      * @author: zw-cn
      * @time: 3/13/2020 4:01 PM
      */
-    void delete(Object object);
+    public void delete(Object object) {
+        Class c = object.getClass();
+        TableInfo tableInfo = TableContext.getPOClassTableMap().get(c);
+        System.out.println(TableContext.getPOClassTableMap());
+        ColumnInfo columnInfo = tableInfo.getPrimaryKey();
+
+        //通过反射机制，调用属性对应的get方法
+        Object key = ReflectUtils.invokeGet(columnInfo.getColumnName(), object);
+
+        delete(c, key);
+    }
 
     /**
-     * @param object     所要更新的对象
+     * @param obj        所要更新的对象
      * @param fieldNames 更新的属性列表
      * @description: 更新对应对象指定字段的值
      * @return: int 影响的行数
      * @author: zw-cn
      * @time: 3/13/2020 4:16 PM
      */
-    int update(Object object, String... fieldNames);
+    public int update(Object obj, String... fieldNames) {
+        Class c = obj.getClass();
+        TableInfo tableInfo = TableContext.getPOClassTableMap().get(c);
+        ColumnInfo primaryKey = tableInfo.getPrimaryKey();
+        List<Object> params = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("update " + tableInfo.getTableName() + " set ");
+        for (String fieldName : fieldNames) {
+            Object fieldValue = ReflectUtils.invokeGet(fieldName, obj);
+            params.add(fieldValue);
+            sql.append(fieldName + "=?,");
+        }
+        sql.setCharAt(sql.length() - 1, ' ');
+        sql.append("where " + primaryKey.getColumnName() + " = ?");
+
+        params.add(ReflectUtils.invokeGet("id", obj));//设置ID
+        return executeDML(sql.toString(), params.toArray());
+    }
 
     /**
      * @param sql    查询sql
@@ -66,17 +145,74 @@ public interface Query {
      * @author: zw-cn
      * @time: 3/13/2020 4:19 PM
      */
-    List queryRows(String sql, Class clazz, Object... params);
+    public List queryRows(String sql, Class clazz, Object... params) {
+        return (List) executeQueryTemplate(sql, clazz, new CallBack() {
+            @Override
+            public Object doExecute(Connection conn, PreparedStatement ps, ResultSet rs) {
+                List rows;
+                try {
+                    ResultSetMetaData metaData = rs.getMetaData();
+                    rows = new ArrayList();
+                    while (rs.next()) {
+                        Object rowObj = clazz.getConstructor().newInstance();
+                        //多列 select uname,age from u_user where id > ? and age < ?
+                        for (int i = 0; i < metaData.getColumnCount(); i++) {
+                            String columnName = metaData.getColumnLabel(i + 1);
+                            Object columnValue = rs.getObject(i + 1);
+
+                            //通过反射调用rowObj的set方法
+                            ReflectUtils.invokeSet(rowObj, columnName, columnValue);
+                        }
+                        rows.add(rowObj);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    rows = null;
+                }
+                return rows;
+            }
+        }, params);
+    }
+
+    /**
+     * @param sql    查询sql
+     * @param clazz  封装数据的JavaBean类的对象
+     * @param params sql参数
+     * @description: 查询返回一个值（一行一列），并将该值返回
+     * @return: java.lang.Object
+     * @author: zw-cn
+     * @time: 3/15/2020 11:20 PM
+     */
+    public Object queryRow(String sql, Class clazz, Object... params) {
+        List list = queryRows(sql, clazz, params);
+        return (list != null && list.size() > 0) ? list.get(0) : null;
+    }
 
     /**
      * @param sql    查询sql
      * @param params sql参数
-     * @description: 查询返回一个值（一行一列），并将该值返回
-     * @return: java.lang.Object 查询结果
+     * @description: 查询返回一个数字（一行一列），并将该值返回
+     * @return: java.lang.Object
      * @author: zw-cn
-     * @time: 3/13/2020 4:22 PM
+     * @time: 3/13/2020 4:24 PM
      */
-    Object queryRow(String sql, Object... params);
+    public Object queryValue(String sql, Object... params) {
+
+        return executeQueryTemplate(sql, null, new CallBack() {
+            @Override
+            public Object doExecute(Connection conn, PreparedStatement ps, ResultSet rs) {
+                Object value = null;
+                try {
+                    if (rs.next()) {
+                        value = rs.getObject(1);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return value;
+            }
+        }, params);
+    }
 
     /**
      * @param sql    查询sql
@@ -84,7 +220,41 @@ public interface Query {
      * @description: 查询返回一个数字（一行一列），并将该值返回
      * @return: java.lang.Number
      * @author: zw-cn
-     * @time: 3/13/2020 4:24 PM
+     * @time: 3/15/2020 11:28 PM
      */
-    Number queryValue(String sql, Object... params);
+    public Number queryNumber(String sql, Object... params) {
+        return (Number) queryValue(sql, params);
+    }
+
+    /**
+     * @param pageNum 页码
+     * @param size    每页显示的条数
+     * @description: 分页查询
+     * @return: java.lang.Object
+     * @author: zw-cn
+     * @time: 3/23/2020 11:06 AM
+     */
+    public abstract Object queryPagination(int pageNum, int size);
+
+    /**
+     * @param sql      sql语句
+     * @param clazz    记录要封装到的Java类
+     * @param callBack CallBack的实现类，实现回调
+     * @param params   sql查询参数
+     * @description: 采用模板方法模式将JDBC操作封装成模板，便于重用
+     * @return: java.lang.Object
+     * @author: zw-cn
+     * @time: 3/23/2020 12:36 PM
+     */
+    public Object executeQueryTemplate(String sql, Class clazz, CallBack callBack, Object... params) {
+        try (Connection conn = DBManager.getConnection();
+             PreparedStatement ps = JDBCUtils.handleParams(conn.prepareStatement(sql), params);
+             ResultSet rs = ps.executeQuery()
+        ) {
+            return callBack.doExecute(conn, ps, rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

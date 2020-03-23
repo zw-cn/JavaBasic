@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class JDBCUtils {
     public static PreparedStatement handleParams(PreparedStatement ps, Object... params){
-        if(params.length > 0){
+        if(params !=null && params.length > 0){
             for (int i = 0; i < params.length; i++) {
                 try {
                     ps.setObject(i+1,params[i]);
