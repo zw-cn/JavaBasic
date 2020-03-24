@@ -17,6 +17,7 @@ import java.util.Properties;
  */
 public class DBManager {
     private static Configuration conf;
+    private static DBConnectionPool pool;
 
     static {
         Properties properties = new Properties();
@@ -33,8 +34,30 @@ public class DBManager {
         conf.setTargetPackage(properties.getProperty("targetPackage"));
         conf.setUrl(properties.getProperty("url"));
         conf.setUser(properties.getProperty("user"));
+        conf.setQueryClass(properties.getProperty("queryClass"));
+        conf.setPoolMaxSize(Integer.valueOf(properties.getProperty("poolMaxSize")));
+        conf.setPoolMinSize(Integer.valueOf(properties.getProperty("poolMinSize")));
+
+        //初始化类信息
+        System.out.println("初始化类信息->"+TableContext.class);
+        System.out.println("初始化连接池类信息->"+DBConnectionPool.class);
     }
+    /**
+     * @param
+     * @description: 通过数据库连接池获取连接
+     * @return: java.sql.Connection
+     * @author: zw-cn
+     * @time: 3/24/2020 10:57 AM
+     */
     public static Connection getConnection(){
+        return pool.getPoolConnection();//使用连接池
+        //return createConnection();//不使用连接池
+    }
+    public static void releaseConnection(Connection conn){
+        pool.releaseConnection(conn);
+    }
+
+    public static Connection createConnection(){
         try {
             Class.forName(conf.getDriver());
             //目前直接建立连接，后期增加连接池处理，以提高效率

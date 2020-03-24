@@ -35,6 +35,18 @@ public class Configuration {
     数据库密码
      */
     private String password;
+    /*
+    使用的查询类
+     */
+    private String queryClass;
+    /*
+    连接池最大连接数
+     */
+    private Integer poolMaxSize;
+    /*
+    连接池最小连接数
+     */
+    private Integer poolMinSize;
 
     public String getCurrentDB() {
         return currentDB;
@@ -90,6 +102,30 @@ public class Configuration {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getQueryClass() {
+        return queryClass;
+    }
+
+    public void setQueryClass(String queryClass) {
+        this.queryClass = queryClass;
+    }
+
+    public Integer getPoolMaxSize() {
+        return poolMaxSize;
+    }
+
+    public void setPoolMaxSize(Integer poolMaxSize) {
+        this.poolMaxSize = poolMaxSize;
+    }
+
+    public Integer getPoolMinSize() {
+        return poolMinSize;
+    }
+
+    public void setPoolMinSize(Integer poolMinSize) {
+        this.poolMinSize = poolMinSize;
     }
 
     @Override

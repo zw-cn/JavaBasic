@@ -17,7 +17,7 @@ import java.util.List;
  * @create: 2020-03-13 15:54
  */
 //@SuppressWarnings("all")
-public abstract class Query {
+public abstract class Query implements Cloneable {
     /**
      * @param sql    sql语句
      * @param params 参数
@@ -28,14 +28,16 @@ public abstract class Query {
      */
     public int executeDML(String sql, Object... params) {
         int count = 0;
-        try (Connection conn = DBManager.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        Connection conn = DBManager.getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             JDBCUtils.handleParams(ps, params);
             System.out.println("MySqlQuery.executeDML->" + ps);
             count = ps.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            DBManager.releaseConnection(conn);
         }
         return count;
     }
@@ -247,14 +249,22 @@ public abstract class Query {
      * @time: 3/23/2020 12:36 PM
      */
     public Object executeQueryTemplate(String sql, Class clazz, CallBack callBack, Object... params) {
-        try (Connection conn = DBManager.getConnection();
-             PreparedStatement ps = JDBCUtils.handleParams(conn.prepareStatement(sql), params);
-             ResultSet rs = ps.executeQuery()
+        Connection conn = DBManager.getConnection();//从连接池中获取数据库连接
+        try (
+                PreparedStatement ps = JDBCUtils.handleParams(conn.prepareStatement(sql), params);
+                ResultSet rs = ps.executeQuery()
         ) {
             return callBack.doExecute(conn, ps, rs);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        } finally {
+            DBManager.releaseConnection(conn);//将数据库连接存入连接池中
         }
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -31,9 +31,23 @@ public class MySqlQuery extends Query {
         Number number = query.queryNumber(sql,null);
         System.out.println(number);
     }
-    public static void main(String[] args) {
-        testQueryNumber();
+    public static void testEfficiency(){
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 200; i++) {
+            testQueryFactory();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end-start+"ms");
     }
+    public static void testQueryFactory(){
+        Query query = QueryFactory.createQuery();
+        List list = query.queryRows("select name from u_user where id>? and regDate <?",U_user.class,20,"2020-3-3");
+        System.out.println(list);
+    }
+    public static void main(String[] args) {
+        testEfficiency();//不使用连接池获取连接14755ms，使用连接池4073ms
+    }
+
 
     public static void testDML() {
         U_user user = new U_user();
