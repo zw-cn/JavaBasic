@@ -39,8 +39,8 @@ public class DBManager {
         conf.setPoolMinSize(Integer.valueOf(properties.getProperty("poolMinSize")));
 
         //初始化类信息
-        System.out.println("初始化类信息->"+TableContext.class);
-        System.out.println("初始化连接池类信息->"+DBConnectionPool.class);
+        //System.out.println("初始化类信息->"+TableContext.class);
+        //System.out.println("初始化连接池类信息->"+DBConnectionPool.class);
     }
     /**
      * @param

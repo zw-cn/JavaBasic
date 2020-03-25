@@ -14,6 +14,9 @@ public class QueryFactory {
         try {
             Class c = Class.forName(DBManager.getConf().getQueryClass());
             query = (Query) c.getConstructor().newInstance();
+            //初始化
+            System.out.println(DBManager.class);
+            System.out.println(DBConnectionPool.class);
         } catch (Exception e) {
             e.printStackTrace();
         }

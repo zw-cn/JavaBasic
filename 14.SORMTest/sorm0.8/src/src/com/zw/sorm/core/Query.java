@@ -1,9 +1,10 @@
-package com.zw.sorm.core;
+package src.com.zw.sorm.core;
 
-import com.zw.sorm.bean.ColumnInfo;
-import com.zw.sorm.bean.TableInfo;
-import com.zw.sorm.utils.JDBCUtils;
-import com.zw.sorm.utils.ReflectUtils;
+
+import src.com.zw.sorm.bean.ColumnInfo;
+import src.com.zw.sorm.bean.TableInfo;
+import src.com.zw.sorm.utils.JDBCUtils;
+import src.com.zw.sorm.utils.ReflectUtils;
 
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -206,7 +207,7 @@ public abstract class Query implements Cloneable {
         ColumnInfo primaryKey = tableInfo.getPrimaryKey();
 
         String sql = "select * from " + tableInfo.getTableName() + " where " + primaryKey.getColumnName() + "= ?";
-        return queryRow(sql,clazz,id);
+        return executeDML(sql, id);
     }
 
     /**
