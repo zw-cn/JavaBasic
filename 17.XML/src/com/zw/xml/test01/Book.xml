@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books>
+    <!--    这是注释的写法-->
+    <book id="1">
+        <name>神雕侠侣</name>
+        <author>金庸</author>
+        <price>10.5</price>
+    </book>
+    <book id="2">
+        <name>设计模式</name>
+        <author>Freeman</author>
+        <price>100</price>
+    </book>
+</books>

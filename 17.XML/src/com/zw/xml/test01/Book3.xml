@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+  <book id="001">
+    <name>Head First</name>
+    <author>Freeman</author>
+    <price>10.5</price>
+  </book>
+</books>
