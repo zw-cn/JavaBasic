@@ -1,0 +1,4 @@
+0    [main] INFO  com.zw.log4j.Test_Log4j_01  - This is a info message
+2    [main] WARN  com.zw.log4j.Test_Log4j_01  - This is a warn message
+2    [main] ERROR com.zw.log4j.Test_Log4j_01  - This is a error message
+2    [main] FATAL com.zw.log4j.Test_Log4j_01  - This is a fatal message
