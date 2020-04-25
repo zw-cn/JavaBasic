@@ -14,4 +14,7 @@
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
+    <listener>
+        <listener-class>com.zw.j2ee.listener.MyListener</listener-class>
+    </listener>
 </web-app>

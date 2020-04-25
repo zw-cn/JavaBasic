@@ -63,4 +63,12 @@
         <servlet-name>myCount</servlet-name>
         <url-pattern>/myCount</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>myFilter</filter-name>
+        <filter-class>com.zw.filter.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

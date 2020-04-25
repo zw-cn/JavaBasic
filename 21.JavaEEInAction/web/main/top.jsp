@@ -49,7 +49,8 @@ $(function(){
      
     <div class="user">
     <span><%=((User)session.getAttribute("user")).getUname()%></span>
-    </div>    
+    <span>在线当前人数：${applicationScope.countOnline}</span>
+    </div>
     
     </div>
 
