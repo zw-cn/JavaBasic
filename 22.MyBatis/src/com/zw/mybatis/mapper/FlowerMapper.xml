@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.flowers">
+    <select id="selectAll" resultType="com.zw.traditional.pojo.Flower">
+        select * from flower
+    </select>
+    <insert id="insertFlower" parameterType="com.zw.traditional.pojo.Flower">
+        insert into flower values (default ,#{name},#{price},#{production})
+    </insert>
+</mapper>

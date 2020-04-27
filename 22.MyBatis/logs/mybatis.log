@@ -1,0 +1,191 @@
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:53:15 ==>  Preparing: insert into flower values (default ,?,?,?) 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:53:16 ==> Parameters: 雏菊(String), 15.0(Double), 中国江西(String)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:53:16 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:58:43 ==>  Preparing: insert into flower values (default ,?,?,?) 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:58:44 ==> Parameters: 雏菊(String), 15.0(Double), 中国江西(String)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-117 11:58:44 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 03:54:46 ==>  Preparing: select id sid,name sname,age sage,tid stid from student; 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 03:54:46 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 03:54:46 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:04:23 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:04:24 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:05:47 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:05:47 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:06:10 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:06:10 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:08:35 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:08:35 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:09:18 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:24 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:10:25 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:11:15 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:26:23 ==>  Preparing: select * from teacher 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:26:23 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:26:23 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:26:23 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:26:23 <====      Total: 3
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:14 ==>  Preparing: select * from teacher 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 <====      Total: 3
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:29:15 <==      Total: 4
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:44:46 ==>  Preparing: select s.id sid,s.name sname,s.age sage,t.id tid,t.name tname,t.subject from student s left outer join teacher t on s.tid=t.id 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:44:46 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:44:46 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:45:37 ==>  Preparing: select s.id sid,s.name sname,s.age sage,t.id tid,t.name tname,t.subject from student s left outer join teacher t on s.tid=t.id 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:45:37 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:45:37 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:54:33 ==>  Preparing: select t.id tid,t.name tname,t.subject,s.id sid,s.name sname,s.age sage from teacher t left outer join student s on t.id = s.tid 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:54:33 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:56:05 ==>  Preparing: select t.id tid,t.name tname,t.subject,s.id sid,s.name sname,s.age sage from teacher t left outer join student s on t.id = s.tid 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:56:05 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:56:06 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:57:23 ==>  Preparing: select t.id tid,t.name tname,t.subject,s.id sid,s.name sname,s.age sage from teacher t left outer join student s on t.id = s.tid 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:57:24 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 04:57:24 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:03:35 ==>  Preparing: select s.id sid,s.name sname,s.age sage,t.id tid,t.name tname,t.subject from student s left outer join teacher t on s.tid=t.id 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:03:35 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:03:35 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==>  Preparing: select id sid,name sname,age sage,tid stid from student; 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==>  Preparing: select * from teacher 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 3
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====>  Preparing: select * from student where tid = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <==      Total: 4
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==>  Preparing: select s.id sid,s.name sname,s.age sage,t.id tid,t.name tname,t.subject from student s left outer join teacher t on s.tid=t.id 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==>  Preparing: select t.id tid,t.name tname,t.subject,s.id sid,s.name sname,s.age sage from teacher t left outer join student s on t.id = s.tid 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:04:45 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:35:25 ==>  Preparing: select * form student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:35:25 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:35:50 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:35:51 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:35:51 <==      Total: 6
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:36:15 ==>  Preparing: insert into student values(default,?,?,?) 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:36:16 ==> Parameters: 新同学(String), 17(Integer), 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:36:16 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:37:21 ==>  Preparing: insert into student values(default,?,?,?) 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:37:21 ==> Parameters: 新同学(String), 17(Integer), 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:37:21 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:38:27 ==>  Preparing: delete student where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:38:27 ==> Parameters: -1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:40:00 ==>  Preparing: update student set name = ?,age=?,tid=? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:40:00 ==> Parameters: 即将转学(String), 17(Integer), 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:40:00 <==    Updates: 7
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:10 ==>  Preparing: update student set name = ?,age=?,tid=? where id=? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:10 ==> Parameters: 即将转学(String), 17(Integer), 1(Integer), 8(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:10 <==    Updates: 0
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 ==>  Preparing: insert into student values(default,?,?,?) 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 ==> Parameters: 新同学(String), 17(Integer), 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 ==>  Preparing: update student set name = ?,age=?,tid=? where id=? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 ==> Parameters: 即将转学(String), 17(Integer), 1(Integer), 8(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:42:43 <==    Updates: 0
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:43:27 ==>  Preparing: update student set name = ?,age=?,tid=? where id=? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:43:27 ==> Parameters: 即将转学(String), 17(Integer), 1(Integer), 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:43:27 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:44:12 ==>  Preparing: delete student where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:44:12 ==> Parameters: -1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:44:40 ==>  Preparing: delete from student where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:44:40 ==> Parameters: -1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:44:40 <==    Updates: 0
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:45:13 ==>  Preparing: delete from student where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:45:13 ==> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:45:13 <==    Updates: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:45:34 ==>  Preparing: select * form student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:45:34 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ==>  Preparing: select * from student 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ==> Parameters: 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====> Parameters: 1(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====> Parameters: 2(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====> Parameters: 3(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====>  Preparing: select * from teacher where id = ? 
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 ====> Parameters: 4(Integer)
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 <====      Total: 1
+org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2020-04-118 05:46:11 <==      Total: 6

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.union.mapper.StudentMapper">
+<!--    别名测试-->
+    <resultMap id="stuMap" type="student">
+        <id property="id" column="sid"></id>
+        <result property="name" column="sname"></result>
+        <result property="age" column="sage"></result>
+        <result property="tid" column="stid"></result>
+    </resultMap>
+    <select id="students" resultMap="stuMap">
+        select id sid,name sname,age sage,tid stid from student;
+    </select>
+<!--    多表查询：学生及其老师（N+1)-->
+    <resultMap id="stuMapN" type="student">
+        <result property="tid" column="tid"></result>
+        <association property="teacher" column="tid" select="com.zw.union.mapper.TeacherMapper.selById"></association>
+    </resultMap>
+    <select id="studentsN" resultMap="stuMapN">
+        select * from student
+    </select>
+<!--    多表查询：老师及其学生们->ref:TeacherMapper-->
+    <select id="stuByTid" resultType="student" parameterType="int">
+        select * from student where tid = #{0}
+    </select>
+<!--    多表查询：学生及其老师（联合查询）-->
+    <resultMap id="stuMapU" type="student">
+        <id property="id" column="sid"></id>
+        <result property="name" column="sname"></result>
+        <result property="age" column="sage"></result>
+        <result property="tid" column="tid"></result>
+        <association property="teacher" javaType="teacher">
+            <id property="id" column="tid"></id>
+            <result property="name" column="tname"></result>
+            <result property="subject" column="subject"></result>
+        </association>
+    </resultMap>
+    <select id="studentsU" resultMap="stuMapU">
+        select s.id sid,s.name sname,s.age sage,t.id tid,t.name tname,t.subject from student s left outer join teacher t on s.tid=t.id
+    </select>
+
+    <select id="studentsUA" resultType="student">
+        select s.id sid,s.name sname,s.age sage,s.tid tid,t.id `teacher.id`,t.name `teacher.name`,t.subject `teacher.subject` from student s left outer join teacher t on s.tid=t.id
+    </select>
+</mapper>
