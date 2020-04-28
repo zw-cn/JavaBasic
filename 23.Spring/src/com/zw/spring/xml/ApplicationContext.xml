@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    创建对象-->
+    <bean id="peo" class="com.zw.spring.pojo.People"></bean>
+    <!--    指定构造器-->
+    <bean id="bnn" class="com.zw.spring.pojo.fruit.Banana">
+        <constructor-arg index="0" value="春天的香蕉"></constructor-arg>
+        <constructor-arg index="1" value="红色"></constructor-arg>
+    </bean>
+    <!--    实例工厂方式-->
+    <bean id="fFactory" class="com.zw.spring.pojo.fruit.FruitFactory"></bean>
+    <bean id="app" factory-bean="fFactory" factory-method="newInstance">
+        <constructor-arg name="name" value="apple"></constructor-arg>
+    </bean>
+    <!--    静态工厂方式-->
+    <bean id="bnn2" class="com.zw.spring.pojo.fruit.StaticFruitFactory" factory-method="newInstance">
+        <constructor-arg name="name" value="banana"></constructor-arg>
+    </bean>
+<!--    设置属性-->
+    <bean id="san" class="com.zw.spring.pojo.People">
+        <property name="name" value="张小三"></property>
+        <property name="age">
+            <value type="int">18</value>
+        </property>
+        <property name="id" value="007"></property>
+        <property name="friends">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+                <value>王五</value>
+            </array>
+        </property>
+        <property name="parents">
+            <list>
+                <value>张大三</value>
+                <value>李大四</value>
+            </list>
+        </property>
+        <property name="cars">
+            <set>
+                <value>凯迪拉克</value>
+                <value>五菱神车</value>
+            </set>
+        </property>
+        <property name="favs">
+            <map>
+                <entry key="玩具" value="钢铁侠玩偶"></entry>
+                <entry key="小吃" value="油条"></entry>
+            </map>
+        </property>
+        <property name="prop">
+            <props>
+                <prop key="手机">华为新款</prop>
+            </props>
+        </property>
+        <property name="clothes" ref="t-shirt"></property>
+    </bean>
+    <bean id="t-shirt" class="com.zw.spring.pojo.Clothes">
+        <property name="description" value="优衣库短袖"></property>
+        <property name="position" value="上半身"></property>
+        <property name="price" value="149"></property>
+    </bean>
+
+</beans>
