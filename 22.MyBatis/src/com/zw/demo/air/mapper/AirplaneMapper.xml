@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.demo.air.mapper.AirplaneMapper">
+    <resultMap id="airplaneMap" type="airplane">
+        <id property="id" column="id"></id>
+        <result property="airNo" column="planeNo"></result>
+        <result property="time" column="time"></result>
+        <result property="price" column="price"></result>
+        <association property="takePort" javaType="airport">
+            <result property="portName" column="tname"></result>
+            <result property="cityName" column="tcity"></result>
+        </association>
+        <association property="landPort" javaType="airport">
+            <result property="portName" column="lname"></result>
+            <result property="cityName" column="lcity"></result>
+        </association>
+    </resultMap>
+    <select id="airplanes" resultMap="airplaneMap">
+        select p.*,t.name tname,t.city tcity,l.name lname,l.city lcity
+from airplane p
+         left outer join airport t on p.takePortId = t.id
+         left outer join airport l on p.landPortId = l.id
+         <where>
+             <if test="takeId>0">and takeportid = #{takeId}</if>
+             <if test="landId>0">and landPortId = #{landId}</if>
+         </where>
+    </select>
+</mapper>
