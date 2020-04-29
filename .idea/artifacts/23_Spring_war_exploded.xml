@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="23.Spring:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/23_Spring_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="23.Spring/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="23.Spring" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="core" module-name="23.Spring" />
+          <element id="library" level="module" name="mybatis" module-name="23.Spring" />
+          <element id="file-copy" path="$PROJECT_DIR$/23.Spring/web/WEB-INF/lib/mybatis/mybatis-spring-1.2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/23.Spring/web/WEB-INF/lib/springWithMyBatis/spring-jdbc-4.1.6.RELEASE.jar" />
+          <element id="library" level="module" name="spring-aop-4.1.6.RELEASE" module-name="23.Spring" />
+          <element id="file-copy" path="$PROJECT_DIR$/23.Spring/web/WEB-INF/lib/springWithMyBatis/spring-web-4.1.6.RELEASE.jar" />
+          <element id="library" level="module" name="jstl" module-name="23.Spring" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

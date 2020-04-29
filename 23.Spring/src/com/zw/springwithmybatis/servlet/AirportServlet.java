@@ -25,10 +25,15 @@ import java.util.List;
  */
 @WebServlet(name = "smAirports",urlPatterns = "/airport")
 public class AirportServlet extends HttpServlet {
+    private AirportService airportService;
+    @Override
+    public void init() throws ServletException {
+        WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+        airportService = webApplicationContext.getBean("airportService", AirportService.class);
+    }
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
-        AirportService airportService = webApplicationContext.getBean("airportService", AirportService.class);
         List<Airport> airports = airportService.airports();
         req.setAttribute("airports",airports);
         req.getRequestDispatcher("air.jsp").forward(req,resp);
