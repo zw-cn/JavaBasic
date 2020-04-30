@@ -1,4 +1,4 @@
-package com.zw.patten.struct.t2.proxy.dynamicproxy;
+package com.zw.patten.struct.t2.proxy.dynamicproxy.jdk;
 
 import java.lang.reflect.Proxy;
 
