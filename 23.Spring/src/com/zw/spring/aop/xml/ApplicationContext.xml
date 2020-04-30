@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--schema普通-->
+    <bean id="step" class="com.zw.spring.aop.ServiceStep"></bean>
+    <bean id="before" class="com.zw.spring.aop.schema.advice.before.MyBeforeAdvice"></bean>
+    <bean id="after" class="com.zw.spring.aop.schema.advice.after.MyAfterReturningAdvice"></bean>
+    <bean id="service" class="com.zw.spring.aop.ServiceStep"></bean>
+    <aop:config>
+        <!--配置切点-->
+        <aop:pointcut id="myPoint" expression="execution(* com.zw.spring.aop.ServiceStep.step2())"/>
+        <!--配置通知-->
+        <aop:advisor advice-ref="before" pointcut-ref="myPoint"></aop:advisor>
+        <aop:advisor advice-ref="after" pointcut-ref="myPoint"></aop:advisor>
+    </aop:config>
+    <!--schema异常-->
+    <bean id="demoS" class="com.zw.spring.aop.schema.service.DemoS"></bean>
+    <bean id="demoSThrow" class="com.zw.spring.aop.schema.advice.thr.DemoSThrow"></bean>
+    <aop:config>
+        <aop:pointcut id="sThrowPoint" expression="execution(* com.zw.spring.aop.schema.service.*.demoThrow())"/>
+        <aop:advisor advice-ref="demoSThrow" pointcut-ref="sThrowPoint"></aop:advisor>
+    </aop:config>
+    <!--schema环绕通知-->
+    <bean id="around" class="com.zw.spring.aop.schema.advice.around.MyMethodInterceptor"></bean>
+    <aop:config>
+        <aop:pointcut id="aroundPoint" expression="execution(* com.zw.spring.aop.schema.service.*.demoAround())"/>
+        <aop:advisor advice-ref="around" pointcut-ref="aroundPoint"></aop:advisor>
+    </aop:config>
+
+
+
+
+    <bean id="aspSer" class="com.zw.spring.aop.aspectj.service.MyAspectJService"></bean>
+    <bean id="myThrow" class="com.zw.spring.aop.aspectj.advice.MyThrow"></bean>
+    <aop:config>
+        <aop:pointcut id="aspectJPoint" expression="execution(* com.zw.spring.aop.aspectj.service.*.* (..))"/>
+        <aop:aspect ref="myThrow" >
+            <aop:after-throwing method="deal" pointcut-ref="aspectJPoint" throwing="exception"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+
+
+    <bean id="myAspectJ" class="com.zw.spring.aop.aspectj.advice.MyAspectJ"></bean>
+    <aop:config>
+        <aop:pointcut id="beforeDoingPoint" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.beforeDoing())"/>
+        <aop:pointcut id="afterDoingPoint" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.afterDoing())"/>
+        <aop:pointcut id="afterExceptionDoingPoint" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.afterExceptionDoing())"/>
+        <aop:pointcut id="underDoingPoint" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.underDoing())"/>
+        <aop:pointcut id="exceptionDoingPoint" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.exceptionDoing())"/>
+        <aop:aspect ref="myAspectJ">
+            <aop:before method="before" pointcut-ref="beforeDoingPoint"></aop:before>
+            <aop:after method="after" pointcut-ref="afterDoingPoint"></aop:after>
+            <aop:after method="after" pointcut-ref="afterExceptionDoingPoint"></aop:after>
+            <aop:after-returning method="afterReturning" pointcut-ref="afterExceptionDoingPoint"></aop:after-returning>
+            <aop:around method="around" pointcut-ref="underDoingPoint"></aop:around>
+            <aop:after-throwing method="throwing" pointcut-ref="exceptionDoingPoint"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config>
+        <aop:pointcut id="serviceWithParam" expression="execution(* com.zw.spring.aop.aspectj.service.MyAspectJService.doingWithParam(String,int)) and args(arg0,arg1))"/>
+        <aop:aspect id="arg" ref="myAspectJ">
+            <aop:before method="beforeWithParam" arg-names="arg0,arg1" pointcut-ref="serviceWithParam"></aop:before>
+        </aop:aspect>
+    </aop:config>
+</beans>
